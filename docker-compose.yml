@@ -1,0 +1,28 @@
+#
+# This docker-compose provides a development environment in case your
+# system is otherwise incompatible with the IDLL project (like MacOS).
+#
+# Build with `docker-compose build`
+# To force a rebuild, remove the container `docker rm IDLL-dev-env`
+# Launch with `docker-compose run IDLL-dev-env`
+version: "3.9"
+
+services:
+  IDLL-dev-env:
+    container_name: IDLL-dev-env
+    build:
+      context: ./
+      dockerfile: Dockerfile.dev-env
+    # todo: what ports should be exposed?
+    volumes:
+    - .:/workspace/Node-IDLL
+    ## Launch an interactive CLI workspace.
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    entrypoint:
+      - "/bin/bash"
+    networks:
+      IDLL:
+
+networks:
+  IDLL:

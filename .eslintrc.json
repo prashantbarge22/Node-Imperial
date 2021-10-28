@@ -1,0 +1,46 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true,
+        "mocha": true
+    },
+    "extends": [
+        "airbnb"
+    ],
+    "rules": {
+        "indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "max-len": [
+            "error",
+            {
+                "code": 200
+            }
+        ],
+        "no-multi-spaces": [
+            "error",
+            {
+                "exceptions": {
+                    "VariableDeclarator": true,
+                    "ImportDeclaration": true,
+                    "AssignmentExpression": true
+                }
+            }
+        ],
+        "import/no-useless-path-segments": [
+            "off"
+        ],
+        "no-underscore-dangle": [
+            "off"
+        ],
+        "object-curly-newline": ["error", {
+            "ImportDeclaration": "never"
+        }]
+    }
+}
